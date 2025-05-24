@@ -25,7 +25,7 @@ export default defineConfig({
       '#mdc-configs': path.resolve(__dirname, './stub-mdc-imports.js'),
     },
   },
-  base: './', // ensure relative paths, e.g. in index.html
+  base: '/koala-movies/', // ensure relative paths, e.g. in index.html
   build: {
     outDir: 'dist', // gets deployed to github pages
     assetsDir: 'assets', // static assets (images, js, css, etc.)
