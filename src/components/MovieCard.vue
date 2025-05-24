@@ -28,7 +28,7 @@ const chatColor = computed(() => {
   <UCard
     :ui="{
       root: 'p-0',
-      body: 'p-0 sm:p-4',
+      body: 'p-4 sm:p-4',
     }"
   >
     <div class="flex items-center justify-between">
@@ -36,7 +36,7 @@ const chatColor = computed(() => {
         <span class="font-bold font-amatic text-2xl">{{ title }}</span>
       </div>
       <dl class="flex gap-4 font-sans text-sm">
-        <span v-if="rating" class="inline-flex items-center gap-2">
+        <span v-if="rating" class="sm:inline-flex hidden items-center gap-2">
           <dt class="sr-only">Кинопоиск:</dt>
           <dd>
             <UBadge icon="i-simple-icons:kinopoisk" variant="soft" :color="ratingColor">{{
@@ -44,7 +44,7 @@ const chatColor = computed(() => {
             }}</UBadge>
           </dd>
         </span>
-        <span v-if="chat" class="inline-flex items-center gap-2">
+        <span v-if="chat" class="sm:inline-flex hidden items-center gap-2">
           <dt class="sr-only">Оценка чата:</dt>
           <dd>
             <UBadge icon="i-fluent:people-community-16-filled" variant="soft" :color="chatColor">

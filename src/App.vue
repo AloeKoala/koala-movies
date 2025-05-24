@@ -20,7 +20,7 @@ const filteredMovies = computed(() => {
     <div class="flex flex-col min-h-screen">
       <MainHeader />
       <UContainer class="p-8 flex-grow">
-        <div class="flex items-center gap-2 mb-6 sticky top-2 bg-white z-1">
+        <div class="flex items-center gap-2 mb-6 sticky top-2 z-1">
           <UInput
             v-model="filterValue"
             icon="i-lucide-search"
