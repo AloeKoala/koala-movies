@@ -8,7 +8,7 @@ import { resolve } from 'node:path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/koala-movies/',
+  // base: '/koala-movies/',
   build: {
     outDir: 'dist', // Output directory
     rollupOptions: {
