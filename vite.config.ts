@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/koala-movies/',
   plugins: [
     vue(),
     ui({
