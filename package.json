@@ -1,6 +1,6 @@
 {
   "name": "koala-movies",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,9 +17,6 @@
   },
   "dependencies": {
     "@nuxt/ui": "^3.1.2",
-    "@nuxtjs/mdc": "^0.17.0",
-    "@shikijs/langs": "^3.4.2",
-    "@shikijs/themes": "^3.4.2",
     "@tanstack/vue-virtual": "^3.13.9",
     "@unhead/vue": "^2.0.10",
     "tailwindcss": "^4.1.7",

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 import { useWindowVirtualizer } from '@tanstack/vue-virtual'
-import type { Movie } from '@/assets/movies'
+import { type Movie, MovieCard } from '@/entities/movie'
+import empty from '@/shared/assets/empty.png'
 
 const props = defineProps<{
   movies: Movie[]
@@ -35,16 +36,17 @@ watch(
 </script>
 
 <template>
-  <h2 class="text-2xl font-bold mb-4 flex justify-between">
-    Фильмы
-    <UBadge
+  <div class="mb-4 flex justify-between items-center">
+    <h2 class="sr-only">Фильмы</h2>
+    <u-badge
       :label="`Всего фильмов: ${total}`"
       variant="soft"
       color="neutral"
-      :ui="{ label: 'font-sans' }"
+      :ui="{ base: 'ml-auto', label: 'font-sans' }"
     />
-  </h2>
-  <div :style="{ height: totalSize + 'px', position: 'relative' }">
+  </div>
+
+  <div v-if="movies.length > 0" :style="{ height: totalSize + 'px', position: 'relative' }">
     <div
       v-for="item in virtualItems"
       :key="item.index"
@@ -55,7 +57,12 @@ watch(
         width: '100%',
       }"
     >
-      <MovieCard v-if="movies[item.index]" v-bind="movies[item.index]" />
+      <movie-card v-if="movies[item.index]" v-bind="movies[item.index]" />
     </div>
+  </div>
+
+  <div v-else class="text-center text-gray-500 flex flex-col items-center justify-center">
+    <img :src="empty" alt="empty" class="w-[200px] mb-4 mx-auto" />
+    <span class="text-3xl font-bold font-amatic">Ничего не найдено</span>
   </div>
 </template>
