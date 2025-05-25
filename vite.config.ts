@@ -1,12 +1,11 @@
-import { fileURLToPath, URL } from 'node:url'
-import path from 'path'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ui from '@nuxt/ui/vite'
+import { fileURLToPath } from 'url'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/koala-movies/',
   plugins: [
     vue(),
     ui({
@@ -21,13 +20,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '#mdc-imports': path.resolve(__dirname, './stub-mdc-imports.js'),
-      '#mdc-configs': path.resolve(__dirname, './stub-mdc-imports.js'),
     },
-  },
-  base: '/koala-movies/', // ensure relative paths, e.g. in index.html
-  build: {
-    outDir: 'dist', // gets deployed to github pages
-    assetsDir: 'assets', // static assets (images, js, css, etc.)
   },
 })
