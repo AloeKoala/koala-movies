@@ -88,7 +88,10 @@ onBeforeUnmount(() => {
   <div
     ref="filterBar"
     class="flex flex-row items-center sm:items-start gap-2 sticky top-2 z-1 w-full filter"
-    :class="{ 'filter--is-stuck before:-left-8 before:-right-8 sm:before:-left-6 sm:before:-right-6': isStuck }"
+    :class="{
+      'filter--is-stuck before:-top-2 before:-bottom-2 before:-left-8 before:-right-8 sm:before:-left-6 sm:before:-right-6':
+        isStuck,
+    }"
   >
     <transition name="fade-logo" mode="out-in">
       <img
@@ -173,13 +176,16 @@ onBeforeUnmount(() => {
   height: 2.2rem;
 }
 
-.fade-logo-enter-active, .fade-logo-leave-active {
+.fade-logo-enter-active,
+.fade-logo-leave-active {
   transition: opacity 0.3s;
 }
-.fade-logo-enter-from, .fade-logo-leave-to {
+.fade-logo-enter-from,
+.fade-logo-leave-to {
   opacity: 0;
 }
-.fade-logo-enter-to, .fade-logo-leave-from {
+.fade-logo-enter-to,
+.fade-logo-leave-from {
   opacity: 1;
 }
 </style>
