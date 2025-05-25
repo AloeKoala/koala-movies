@@ -12,6 +12,7 @@ const sortOptions = [
   { label: 'Название', value: 'title', icon: 'i-material-symbols:sort-by-alpha' },
   { label: 'Рейтинг', value: 'rating', icon: 'i-simple-icons:kinopoisk' },
   { label: 'Чат', value: 'chat', icon: 'i-fluent:people-community-16-filled' },
+  { label: 'Дата', value: 'date', icon: 'i-lucide-calendar' },
 ]
 const sortBy = ref('title')
 const sortDir = ref<'asc' | 'desc'>('asc')
@@ -43,6 +44,13 @@ const filteredMovies = computed(() => {
     sorted.sort((a, b) => (Number(b.rating) || 0) - (Number(a.rating) || 0))
   } else if (sortBy.value === 'chat') {
     sorted.sort((a, b) => (Number(b.chat) || 0) - (Number(a.chat) || 0))
+  } else if (sortBy.value === 'date') {
+    sorted.sort((a, b) => {
+      if (!a.date && !b.date) return 0
+      if (!a.date) return 1
+      if (!b.date) return -1
+      return new Date(a.date).getTime() - new Date(b.date).getTime()
+    })
   }
   if (sortDir.value === 'desc') {
     sorted.reverse()
@@ -91,6 +99,9 @@ watch(
         :label="option.label"
         :color="sortBy === option.value ? 'primary' : 'neutral'"
         :variant="sortBy === option.value ? 'solid' : 'outline'"
+        :ui="{
+          label: 'font-sans text-xs sm:text-sm',
+        }"
         @click="toggleSort(option.value)"
       >
         <template #trailing>

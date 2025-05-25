@@ -23,12 +23,22 @@ const chatColor = computed(() => {
   <u-card
     :ui="{
       root: 'p-0',
-      body: 'p-4 sm:p-4 flex items-center justify-between',
+      body: 'p-4 sm:p-4 flex items-center justify-between gap-2',
     }"
   >
-    <h3 class="font-bold font-amatic text-2xl">{{ title }}</h3>
+    <div class="flex gap-2 items-center w-full max-w-[320px] sm:max-w-none">
+      <div class="min-w-0 flex-1">
+        <h3 class="kd-h3 font-sans text-lg truncate">{{ title }}</h3>
+      </div>
+      <u-badge
+        variant="soft"
+        color="neutral"
+        :label="year"
+        class="inline-flex items-center gap-2"
+      />
+    </div>
 
-    <section class="flex gap-4 font-sans text-sm">
+    <section class="flex gap-2 font-sans text-sm">
       <h4 class="sr-only">Информация</h4>
       <u-badge
         v-if="rating"
@@ -55,9 +65,11 @@ const chatColor = computed(() => {
         class="inline-flex items-center gap-2"
       />
       <u-badge
+        v-if="date"
+        icon="i-lucide-calendar"
         variant="soft"
         color="neutral"
-        :label="year"
+        :label="new Date(date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })"
         class="inline-flex items-center gap-2"
       />
     </section>
