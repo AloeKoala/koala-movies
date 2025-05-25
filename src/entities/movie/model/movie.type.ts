@@ -4,4 +4,5 @@ export type Movie = {
   rating?: number | string
   chat?: number | string
   nick?: string
+  data?: string
 }
