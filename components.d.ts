@@ -8,12 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    MainHeader: typeof import('./src/components/MainHeader.vue')['default']
-    MovieCard: typeof import('./src/components/MovieCard.vue')['default']
-    MovieList: typeof import('./src/components/MovieList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ThemeSwitcher: typeof import('./src/components/ThemeSwitcher.vue')['default']
     UApp: typeof import('./node_modules/.pnpm/@nuxt+ui@3.1.2_@babel+parser@7.27.2_embla-carousel@8.6.0_typescript@5.8.3_vite@6.3.5_@types+n_2i64dpi6gcjxm2izqozlmhnoke/node_modules/@nuxt/ui/dist/runtime/components/App.vue')['default']
     UBadge: typeof import('./node_modules/.pnpm/@nuxt+ui@3.1.2_@babel+parser@7.27.2_embla-carousel@8.6.0_typescript@5.8.3_vite@6.3.5_@types+n_2i64dpi6gcjxm2izqozlmhnoke/node_modules/@nuxt/ui/dist/runtime/components/Badge.vue')['default']
     UButton: typeof import('./node_modules/.pnpm/@nuxt+ui@3.1.2_@babel+parser@7.27.2_embla-carousel@8.6.0_typescript@5.8.3_vite@6.3.5_@types+n_2i64dpi6gcjxm2izqozlmhnoke/node_modules/@nuxt/ui/dist/runtime/components/Button.vue')['default']
