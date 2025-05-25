@@ -68,7 +68,9 @@ watch(
 </script>
 
 <template>
-  <div class="flex flex-col items-center sm:items-start sm:flex-row gap-2 mb-6 sticky top-2 z-1 w-full">
+  <div
+    class="flex flex-col items-center sm:items-start sm:flex-row gap-2 sticky top-2 z-1 w-full"
+  >
     <u-input
       :model-value="props.modelValue"
       @update:model-value="updateValue"
@@ -91,7 +93,7 @@ watch(
       </template>
     </u-input>
 
-        <u-button-group size="lg">
+    <u-button-group size="lg" class="hidden sm:flex align-middle">
       <u-button
         v-for="option in sortOptions"
         :key="option.value"
