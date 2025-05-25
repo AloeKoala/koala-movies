@@ -87,8 +87,8 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="filterBar"
-    class="flex flex-col items-center sm:items-start sm:flex-row gap-2 sticky top-2 z-1 w-full filter"
-    :class="{ 'filter--is-stuck': isStuck }"
+    class="flex flex-row items-center sm:items-start gap-2 sticky top-2 z-1 w-full filter"
+    :class="{ 'filter--is-stuck before:-left-8 before:-right-8 sm:before:-left-6 sm:before:-right-6': isStuck }"
   >
     <transition name="fade-logo" mode="out-in">
       <img
@@ -162,10 +162,6 @@ onBeforeUnmount(() => {
   background-color: var(--ui-bg);
   border-bottom: 1px solid var(--ui-border);
   position: absolute;
-  top: -0.5rem;
-  left: -1000px;
-  right: -1000px;
-  bottom: -0.5rem;
   z-index: -1;
   opacity: 1;
 }
