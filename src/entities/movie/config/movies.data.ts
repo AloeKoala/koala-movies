@@ -245,6 +245,7 @@ export const movies: Movie[] = [
   { title: 'Солнце в последние дни сегуната', year: 1954 },
   { title: 'Соник в кино', year: 2020 },
   { title: 'Соник в кино 2', year: 2022 },
+  { title: 'Сонная лощина', year: 1999, rating: 7.9, chat: 7.5, date: '2025-05-27', nick: 'lisichka_4an' },
   { title: 'Стальная хватка', year: 2023 },
   { title: 'Старикам тут не место', year: 2007 },
   { title: 'Стражи Галактики', year: 2014 },
