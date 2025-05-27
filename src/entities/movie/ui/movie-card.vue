@@ -23,7 +23,7 @@ const chatColor = computed(() => {
   <u-card
     :ui="{
       root: 'p-0',
-      body: 'p-4 sm:p-4 flex items-center justify-between gap-2',
+      body: 'p-4 sm:p-4 grid sm:flex items-center justify-between gap-2 overflow-x-auto',
     }"
   >
     <div class="flex justify-start gap-2 items-center w-full max-w-[320px] sm:max-w-none">
@@ -36,32 +36,37 @@ const chatColor = computed(() => {
       />
     </div>
 
-    <section class="gap-2 font-sans text-sm hidden sm:flex">
+    <section
+      class="font-sans text-sm flex flex-row gap-2 py-1 overflow-x-auto whitespace-nowrap sm:overflow-x-visible sm:whitespace-normal sm:py-0"
+    >
       <h4 class="sr-only">Информация</h4>
       <u-badge
         v-if="rating"
         icon="i-simple-icons:kinopoisk"
         variant="soft"
         :color="ratingColor"
-        class="gap-2 sm:inline-flex hidden"
         :label="rating"
+        class="gap-2 inline-flex"
       />
       <u-badge
         v-if="chat"
         icon="i-fluent:people-community-16-filled"
         variant="soft"
         :color="chatColor"
-        class="gap-2 sm:inline-flex hidden"
         :label="chat"
+        class="gap-2 inline-flex"
       />
-      <u-badge
-        v-if="nick"
-        icon="i-material-symbols:person"
-        variant="soft"
-        color="neutral"
-        :label="nick"
-        class="inline-flex items-center gap-2"
-      />
+      <template v-if="nick">
+        <u-badge
+          v-for="user of nick.split('+')"
+          :key="user"
+          icon="i-material-symbols:person"
+          variant="soft"
+          color="neutral"
+          :label="user"
+          class="inline-flex items-center gap-2"
+        />
+      </template>
       <u-badge
         v-if="date"
         icon="i-lucide-calendar"
