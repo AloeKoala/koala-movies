@@ -10,7 +10,7 @@ const filteredMovies = ref<Movie[]>(movies.value)
 
 const filterRef = ref<HTMLElement | null>(null)
 const listRef = ref<{ root: HTMLElement | null } | null>(null)
-const isIntersecting = ref(false)
+const isIntersecting = ref(true)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
