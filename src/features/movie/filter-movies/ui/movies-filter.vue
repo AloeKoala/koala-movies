@@ -87,13 +87,13 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="filterBar"
-    class="flex flex-row items-center sm:items-start gap-2 sticky top-2 z-1 w-full filter"
+    class="flex flex-row items-center sm:items-start gap-2 sticky top-2 z-1 w-full"
     :class="{
       'filter--is-stuck before:-top-2 before:-bottom-2 before:-left-8 before:-right-8 sm:before:-left-6 sm:before:-right-6':
         isStuck,
     }"
   >
-    <transition name="fade-logo" mode="out-in">
+    <!-- <transition name="fade-logo" mode="out-in">
       <img
         v-if="isStuck"
         src="@/shared/assets/logo_right.png"
@@ -101,7 +101,12 @@ onBeforeUnmount(() => {
         class="filter__logo"
         :class="{ 'filter__logo--is-stuck': isStuck }"
       />
-    </transition>
+    </transition> -->
+    <div
+      v-if="isStuck"
+      class="h-[3.2rem] fixed top-0 left-0 w-full z-0 border-b-gray-200 border-b-2 dark:border-b-gray-800 bg-(--ui-bg)"
+      role="presentation"
+    />
     <u-input
       :model-value="props.modelValue"
       @update:model-value="updateValue"
@@ -160,20 +165,28 @@ onBeforeUnmount(() => {
   pointer-events: none;
 }
 
-.filter--is-stuck::before {
-  content: '';
-  background-color: var(--ui-bg);
-  border-bottom: 1px solid var(--ui-border);
-  position: absolute;
-  z-index: -1;
-  opacity: 1;
-}
-
 .filter--is-stuck .filter__logo {
   display: block;
   width: auto;
   flex: 1;
   height: 2.2rem;
+}
+
+.filter--is-stuck .filter__input {
+  margin-left: 3rem;
+}
+
+.filter--is-stuck .filter__input::before {
+  content: '';
+  background-image: url('@/shared/assets/logo_right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+  left: -3rem;
+  position: absolute;
+  z-index: 1;
 }
 
 .fade-logo-enter-active,

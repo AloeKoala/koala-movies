@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 import { useWindowVirtualizer } from '@tanstack/vue-virtual'
+import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { type Movie, MovieCard } from '@/entities/movie'
 import empty from '@/shared/assets/empty.png'
 
@@ -10,10 +11,13 @@ const props = defineProps<{
   filterValue: string
 }>()
 
-const rowHeight = 80 // px, примерная высота карточки
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isMobile = breakpoints.smaller('sm')
+
+const rowHeight = computed(() => (isMobile.value ? 120 : 80))
 const virtualizer = useWindowVirtualizer({
   count: props.movies.length,
-  estimateSize: (index) => (isItemVisible(index) ? rowHeight : 0),
+  estimateSize: (index) => (isItemVisible(index) ? rowHeight.value : 0),
   overscan: 5,
 })
 
@@ -33,6 +37,10 @@ watch(
     virtualizer.value.scrollToIndex(0)
   },
 )
+
+watch(isMobile, () => {
+  virtualizer.value.measure()
+})
 </script>
 
 <template>
