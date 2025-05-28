@@ -5,6 +5,7 @@ import type { Movie } from '@/entities/movie'
 const props = defineProps<{
   modelValue: string
   movies: Movie[]
+  isIntersecting?: boolean
 }>()
 const emit = defineEmits(['update:modelValue', 'update:filteredMovies'])
 
