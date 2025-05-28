@@ -24,6 +24,9 @@ const virtualizer = useWindowVirtualizer({
 const virtualItems = computed(() => virtualizer.value.getVirtualItems())
 const totalSize = computed(() => virtualizer.value.getTotalSize())
 
+const root = ref<HTMLElement | null>(null)
+defineExpose({ root })
+
 function isItemVisible(index: number) {
   const item = props.movies[index]
   if (!item) return false
@@ -41,9 +44,6 @@ watch(
 watch(isMobile, () => {
   virtualizer.value.measure()
 })
-
-const root = ref<HTMLElement | null>(null)
-defineExpose({ root })
 </script>
 
 <template>

@@ -9,28 +9,29 @@ const filterValue = ref<string>('')
 const filteredMovies = ref<Movie[]>(movies.value)
 
 const filterRef = ref<HTMLElement | null>(null)
-const listRef = ref<HTMLElement | null>(null)
-const isIntersecting = ref(true)
+const listRef = ref<{ root: HTMLElement | null } | null>(null)
+const isIntersecting = ref(false)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (filterRef.value && listRef.value) {
+  if (filterRef.value && listRef.value?.root) {
     observer = new IntersectionObserver(
       ([entry]) => {
         isIntersecting.value = entry.isIntersecting
+        console.log(isIntersecting.value)
       },
       {
         root: null,
         threshold: 0,
       },
     )
-    observer.observe(listRef.value)
+    observer.observe(listRef.value.root!)
   }
 })
 
 onBeforeUnmount(() => {
-  if (observer && listRef.value) {
-    observer.unobserve(listRef.value)
+  if (observer && listRef.value?.root) {
+    observer.unobserve(listRef.value.root!)
   }
 })
 </script>
