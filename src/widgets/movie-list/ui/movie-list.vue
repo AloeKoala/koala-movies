@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, watch, ref, defineExpose } from 'vue'
 import { useWindowVirtualizer } from '@tanstack/vue-virtual'
 import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { type Movie, MovieCard } from '@/entities/movie'
@@ -41,10 +41,13 @@ watch(
 watch(isMobile, () => {
   virtualizer.value.measure()
 })
+
+const root = ref<HTMLElement | null>(null)
+defineExpose({ root })
 </script>
 
 <template>
-  <div class="mb-4 flex justify-between items-center">
+  <div ref="root" class="mb-4 flex justify-between items-center">
     <h2 class="sr-only">Фильмы</h2>
     <u-badge
       :label="`Всего фильмов: ${total}`"
