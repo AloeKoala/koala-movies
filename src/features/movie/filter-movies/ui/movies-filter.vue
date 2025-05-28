@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, computed, watch, ref } from 'vue'
 import type { Movie } from '@/entities/movie'
+import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
 
 const props = defineProps<{
   modelValue: string
@@ -31,6 +32,7 @@ function toggleSort(optionValue: string) {
     sortBy.value = optionValue
     sortDir.value = 'asc'
   }
+  sendMetricEvent(YM_ACTION.CLICK_SORT, { sort: optionValue })
 }
 
 const filteredMovies = computed(() => {

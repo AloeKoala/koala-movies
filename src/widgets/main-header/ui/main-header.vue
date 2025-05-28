@@ -22,7 +22,7 @@ import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 hover:underline"
           :class="link.color"
-          @click="sendMetricEvent({ action: YM_ACTION.CLICK_LINK, link: link.name })"
+          @click="sendMetricEvent(YM_ACTION.CLICK_LINK, { link: link.name })"
         >
           <u-icon :name="link.icon" class="text-base" />
           <span>
