@@ -18,7 +18,6 @@ onMounted(() => {
     observer = new IntersectionObserver(
       ([entry]) => {
         isIntersecting.value = entry.isIntersecting
-        console.log(isIntersecting.value)
       },
       {
         root: null,

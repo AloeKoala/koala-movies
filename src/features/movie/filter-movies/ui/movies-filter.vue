@@ -2,6 +2,7 @@
 import { defineProps, defineEmits, computed, watch, ref } from 'vue'
 import type { Movie } from '@/entities/movie'
 import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
+import { debounce } from '@/shared/lib/utils'
 
 const props = defineProps<{
   modelValue: string
@@ -21,8 +22,15 @@ const sortDir = ref<'asc' | 'desc'>('asc')
 
 const filterBar = ref<HTMLElement | null>(null)
 
+const sendInputMetric = debounce((value: unknown) => {
+  if (typeof value === 'string') {
+    sendMetricEvent(YM_ACTION.INPUT_SEARCH, { value })
+  }
+}, 500)
+
 function updateValue(value: string) {
   emit('update:modelValue', value)
+  sendInputMetric(value)
 }
 
 function toggleSort(optionValue: string) {
