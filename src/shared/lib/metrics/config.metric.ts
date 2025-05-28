@@ -5,4 +5,5 @@ export enum YM_ACTION {
   CLICK_LINK = 'click_link',
   CLICK_SORT = 'click_sort',
   SCROLL_PAGE = 'scroll_page',
+  INPUT_SEARCH = 'input_search',
 }
