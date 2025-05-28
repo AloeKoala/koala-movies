@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ThemeSwitcher } from '@/widgets/theme-switcher'
 import { links } from '@/widgets/main-header'
+import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import { links } from '@/widgets/main-header'
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 hover:underline"
           :class="link.color"
+          @click="sendMetricEvent({ action: YM_ACTION.CLICK_LINK, link: link.name })"
         >
           <u-icon :name="link.icon" class="text-base" />
           <span>
