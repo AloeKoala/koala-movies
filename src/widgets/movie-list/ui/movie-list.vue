@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, watch, ref, defineExpose } from 'vue'
 import { useWindowVirtualizer } from '@tanstack/vue-virtual'
 import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { type Movie, MovieCard } from '@/entities/movie'
@@ -24,6 +24,9 @@ const virtualizer = useWindowVirtualizer({
 const virtualItems = computed(() => virtualizer.value.getVirtualItems())
 const totalSize = computed(() => virtualizer.value.getTotalSize())
 
+const root = ref<HTMLElement | null>(null)
+defineExpose({ root })
+
 function isItemVisible(index: number) {
   const item = props.movies[index]
   if (!item) return false
@@ -44,7 +47,7 @@ watch(isMobile, () => {
 </script>
 
 <template>
-  <div class="mb-4 flex justify-between items-center">
+  <div ref="root" class="mb-4 flex justify-between items-center">
     <h2 class="sr-only">Фильмы</h2>
     <u-badge
       :label="`Всего фильмов: ${total}`"
@@ -65,7 +68,7 @@ watch(isMobile, () => {
         width: '100%',
       }"
     >
-      <movie-card v-if="movies[item.index]" v-bind="movies[item.index]" />
+      <movie-card v-if="movies[item.index]" v-bind="movies[item.index]" :is-mobile="isMobile" />
     </div>
   </div>
 

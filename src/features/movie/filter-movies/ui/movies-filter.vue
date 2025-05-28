@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, computed, watch, ref, onMounted, onBeforeUnmount } from 'vue'
+import { defineProps, defineEmits, computed, watch, ref } from 'vue'
 import type { Movie } from '@/entities/movie'
 
 const props = defineProps<{
   modelValue: string
   movies: Movie[]
+  isIntersecting?: boolean
 }>()
 const emit = defineEmits(['update:modelValue', 'update:filteredMovies'])
 
@@ -18,7 +19,6 @@ const sortBy = ref('title')
 const sortDir = ref<'asc' | 'desc'>('asc')
 
 const filterBar = ref<HTMLElement | null>(null)
-const isStuck = ref(false)
 
 function updateValue(value: string) {
   emit('update:modelValue', value)
@@ -68,42 +68,24 @@ watch(
   },
   { immediate: true },
 )
-
-function handleScroll() {
-  if (!filterBar.value) return
-  const { top } = filterBar.value.getBoundingClientRect()
-  isStuck.value = top <= 8 // top-2
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <template>
   <div
     ref="filterBar"
     class="flex flex-row items-center sm:items-start gap-2 sticky top-2 z-1 w-full"
-    :class="{
-      'filter--is-stuck before:-top-2 before:-bottom-2 before:-left-8 before:-right-8 sm:before:-left-6 sm:before:-right-6':
-        isStuck,
-    }"
   >
-    <!-- <transition name="fade-logo" mode="out-in">
+    <transition name="fade-logo" mode="out-in">
       <img
-        v-if="isStuck"
+        v-if="!isIntersecting"
         src="@/shared/assets/logo_right.png"
         alt="logo"
-        class="filter__logo"
-        :class="{ 'filter__logo--is-stuck': isStuck }"
+        class="block w-[1.75rem] h-auto z-1"
+        :class="{ 'filter__logo--is-intersecting': !isIntersecting }"
       />
-    </transition> -->
+    </transition>
     <div
-      v-if="isStuck"
+      v-if="!isIntersecting"
       class="h-[3.2rem] fixed top-0 left-0 w-full z-0 border-b-gray-200 border-b-2 dark:border-b-gray-800 bg-(--ui-bg)"
       role="presentation"
     />
@@ -154,7 +136,7 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .filter__logo {
   display: none;
 }
@@ -163,30 +145,6 @@ onBeforeUnmount(() => {
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
-}
-
-.filter--is-stuck .filter__logo {
-  display: block;
-  width: auto;
-  flex: 1;
-  height: 2.2rem;
-}
-
-.filter--is-stuck .filter__input {
-  margin-left: 3rem;
-}
-
-.filter--is-stuck .filter__input::before {
-  content: '';
-  background-image: url('@/shared/assets/logo_right.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 2rem;
-  height: 2rem;
-  left: -3rem;
-  position: absolute;
-  z-index: 1;
 }
 
 .fade-logo-enter-active,
