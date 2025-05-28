@@ -68,7 +68,7 @@ watch(isMobile, () => {
         width: '100%',
       }"
     >
-      <movie-card v-if="movies[item.index]" v-bind="movies[item.index]" />
+      <movie-card v-if="movies[item.index]" v-bind="movies[item.index]" :is-mobile="isMobile" />
     </div>
   </div>
 

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import type { Movie } from '@/entities/movie'
 
-const props = defineProps<Movie>()
+const props = defineProps<Movie & { isMobile: boolean }>()
 
 const ratingColor = computed(() => {
   if (Number.isNaN(Number(props.rating))) return 'neutral'
@@ -23,10 +23,12 @@ const chatColor = computed(() => {
   <u-card
     :ui="{
       root: 'p-0',
-      body: 'p-4 sm:p-4 grid sm:flex items-center justify-between gap-2 overflow-x-auto',
+      body: 'grid p-0 items-center justify-between gap-2 overflow-x-auto sm:p-0 grid-cols-1 sm:grid-cols-2 sm:flex sm:py-4',
     }"
   >
-    <div class="flex justify-start gap-2 items-center w-full max-w-[320px] sm:max-w-none">
+    <div
+      class="flex p-4 pb-2 justify-between gap-2 items-center w-full sm:max-w-full sm:justify-start sm:py-0"
+    >
       <h3 class="kd-h3 font-sans text-lg truncate">{{ title }}</h3>
       <u-badge
         variant="soft"
@@ -37,7 +39,7 @@ const chatColor = computed(() => {
     </div>
 
     <section
-      class="font-sans text-sm flex flex-row gap-2 py-1 overflow-x-auto whitespace-nowrap sm:overflow-x-visible sm:whitespace-normal sm:py-0"
+      class="font-sans text-sm flex flex-row gap-2 px-4 pb-4 sm:pl-0 overflow-x-auto w-full whitespace-nowrap sm:overflow-x-visible sm:whitespace-normal sm:py-0 sm:justify-end"
     >
       <h4 class="sr-only">Информация</h4>
       <u-badge
@@ -75,7 +77,7 @@ const chatColor = computed(() => {
         :label="
           new Date(date).toLocaleDateString('ru-RU', {
             day: 'numeric',
-            month: 'long',
+            month: isMobile ? 'short' : 'long',
             year: 'numeric',
           })
         "
