@@ -11,7 +11,7 @@ const filteredMovies = ref<Movie[]>(movies.value)
 
 const statisticsRef = ref<{ root: HTMLElement | null } | null>(null)
 const filterRef = ref<HTMLElement | null>(null)
-const isIntersecting = ref(true)
+const isIntersecting = ref<boolean>(false)
 
 let observer: IntersectionObserver | null = null
 
