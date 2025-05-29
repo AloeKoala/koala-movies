@@ -7,7 +7,6 @@ import empty from '@/shared/assets/empty.png'
 
 const props = defineProps<{
   movies: Movie[]
-  total: number
   filterValue: string
 }>()
 
@@ -18,7 +17,7 @@ const rowHeight = computed(() => (isMobile.value ? 120 : 80))
 const virtualizer = useWindowVirtualizer({
   count: props.movies.length,
   estimateSize: (index) => (isItemVisible(index) ? rowHeight.value : 0),
-  overscan: 5,
+  overscan: 10,
 })
 
 const virtualItems = computed(() => virtualizer.value.getVirtualItems())
@@ -49,12 +48,6 @@ watch(isMobile, () => {
 <template>
   <div ref="root" class="mb-4 flex justify-between items-center">
     <h2 class="sr-only">Фильмы</h2>
-    <u-badge
-      :label="`Всего фильмов: ${total}`"
-      variant="soft"
-      color="neutral"
-      :ui="{ base: 'ml-auto', label: 'font-sans' }"
-    />
   </div>
 
   <div v-if="movies.length > 0" :style="{ height: totalSize + 'px', position: 'relative' }">
