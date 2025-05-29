@@ -287,6 +287,7 @@ export const movies: Movie[] = [
   { title: 'Фри-соло', year: 2018, rating: 8.2, chat: 7.0, date: '2025-02-28', nick: 'lord_cthulhu_23' },
   { title: 'Хеллбой', year: 2019, rating: 6.1, chat: 5.0, date: '2024-04-19' },
   { title: 'Хижина в лесу', year: 2011, rating: 6.7, date: '2023-05-19' },
+  { title: 'Хорошо быть тихоней', year: 2012, rating: 7.5, chat: 8.0, date: '2025-05-29', nick: '0706aestyles' },
   { title: 'Хоть раз в жизни', year: 2013, rating: 7.4, date: '2023-03-09' },
   { title: 'Храбрая сердцем', year: 2012, rating: 7.4, date: '2023-08-18' },
   { title: 'Храброе сердце', year: 1995, rating: 8.3, date: '2022-11-04' },
