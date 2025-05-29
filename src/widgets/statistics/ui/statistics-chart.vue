@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { ref, defineExpose } from 'vue'
 import { useStatistics } from '@/widgets/statistics/model/statistics.composable'
 
 const { totalMovies, top3MoviesByChatRating, top3Nicknames } = useStatistics()
+
+const root = ref<HTMLElement | null>(null)
+defineExpose({ root })
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-full">
+  <div ref="root" class="flex flex-col items-center justify-center w-full">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
       <!-- Топ-3 спонсоров -->
       <UCard class="flex flex-col items-center shadow-sm" :ui="{ body: 'self-stretch' }">
