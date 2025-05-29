@@ -24,7 +24,7 @@ const filterBar = ref<HTMLElement | null>(null)
 
 const sendInputMetric = debounce((value: unknown) => {
   if (typeof value === 'string') {
-    sendMetricEvent(YM_ACTION.INPUT_SEARCH, { value })
+    sendMetricEvent(YM_ACTION.INPUT_SEARCH, { searchMovie: value })
   }
 }, 500)
 
@@ -40,7 +40,7 @@ function toggleSort(optionValue: string) {
     sortBy.value = optionValue
     sortDir.value = 'asc'
   }
-  sendMetricEvent(YM_ACTION.CLICK_SORT, { sort: optionValue })
+  sendMetricEvent(YM_ACTION.CLICK_SORT, { sort: optionValue, direction: sortDir.value })
 }
 
 const filteredMovies = computed(() => {
@@ -87,15 +87,15 @@ watch(
   >
     <transition name="fade-logo" mode="out-in">
       <img
-        v-if="!isIntersecting"
+        v-if="isIntersecting"
         src="@/shared/assets/logo_right.png"
         alt="logo"
         class="block w-[1.75rem] h-auto z-1"
-        :class="{ 'filter__logo--is-intersecting': !isIntersecting }"
+        :class="{ 'filter__logo--is-intersecting': isIntersecting }"
       />
     </transition>
     <div
-      v-if="!isIntersecting"
+      v-if="isIntersecting"
       class="h-[3.2rem] fixed top-0 left-0 w-full z-0 border-b-gray-200 border-b-2 dark:border-b-gray-800 bg-(--ui-bg)"
       role="presentation"
     />

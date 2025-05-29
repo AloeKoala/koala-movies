@@ -3,40 +3,42 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { type Movie, movies as data } from '@/entities/movie'
 import { MoviesFilter } from '@/features/movie'
 import { MovieList } from '@/widgets/movie-list'
+import { StatisticsChart } from '@/widgets/statistics'
 
 const movies = ref<Movie[]>(data)
 const filterValue = ref<string>('')
 const filteredMovies = ref<Movie[]>(movies.value)
 
+const statisticsRef = ref<{ root: HTMLElement | null } | null>(null)
 const filterRef = ref<HTMLElement | null>(null)
-const listRef = ref<{ root: HTMLElement | null } | null>(null)
 const isIntersecting = ref(true)
+
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (filterRef.value && listRef.value?.root) {
-    observer = new IntersectionObserver(
-      ([entry]) => {
-        isIntersecting.value = entry.isIntersecting
-      },
-      {
-        root: null,
-        threshold: 0,
-      },
-    )
-    observer.observe(listRef.value.root!)
-  }
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      isIntersecting.value = !entry.isIntersecting
+    },
+    {
+      root: null,
+      threshold: 0,
+    },
+  )
+  observer.observe(statisticsRef.value?.root!)
 })
 
 onBeforeUnmount(() => {
-  if (observer && listRef.value?.root) {
-    observer.unobserve(listRef.value.root!)
+  if (observer && statisticsRef.value?.root) {
+    observer.unobserve(statisticsRef.value?.root!)
   }
 })
 </script>
 
 <template>
   <u-container class="p-4 flex-grow">
+    <statistics-chart ref="statisticsRef" class="mb-12" />
+
     <div class="flex items-center gap-2 mb-6 sticky top-2 z-1" ref="filterRef">
       <movies-filter
         v-model="filterValue"
@@ -46,11 +48,6 @@ onBeforeUnmount(() => {
       />
     </div>
 
-    <movie-list
-      ref="listRef"
-      :movies="filteredMovies"
-      :total="movies.length"
-      :filter-value="filterValue"
-    />
+    <movie-list :movies="filteredMovies" :filter-value="filterValue" />
   </u-container>
 </template>
