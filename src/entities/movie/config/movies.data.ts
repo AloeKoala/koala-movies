@@ -86,7 +86,7 @@ export const movies: Movie[] = [
   { title: 'Достать ножи: стеклянная луковица', year: 2022, rating: 6.9, date: '2023-10-20', nick: 'lord_cthulhu_23' },
   { title: 'Достучаться до небес', year: 1997, rating: 8.6, date: '2022-12-09', nick: 'zhrun1' },
   { title: 'Драйв', year: 2011, rating: 7.2, date: '2022-07-08', nick: 'Mira Lied' },
-  { title: 'Дрожи, сколько хочешь', year: 2017, date: '2023-07-14', nick: 'cosmogranic' },
+  { title: 'Дрожи, сколько хочешь', year: 2017, date: '2023-07-14', nick: 'cosmogranic+PastGenKnight' },
   { title: 'Душа', year: 2020, rating: 8.4, date: '2023-03-31', nick: 'zhrun1' },
   { title: 'Евротур', year: 2004, rating: 7.6, date: '2024-10-15', nick: 'zhrun1' },
   { title: 'Её заветное желание', year: 2020, rating: 8.2, chat: 6.5, date: '2024-05-10', nick: 'lord_cthulhu_23' },
