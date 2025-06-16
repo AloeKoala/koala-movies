@@ -159,6 +159,7 @@ export const movies: Movie[] = [
   { title: 'Меню', year: 2022, rating: 6.7, date: '2023-03-03', nick: 'zhrun1+mel1r' },
   { title: 'Митчеллы против машин', year: 2021, rating: 7.9, date: '2023-09-29', nick: 'zhrun1' },
   { title: 'Моана', year: 2016, rating: 7.8, chat: 7.0, date: '2024-03-08', nick: 'AloeKoala' },
+  { title: 'Мой ленивец - убийца', year: 2023, rating: 4.8, chat: 3.5, date: '2025-06-16', nick: 'Dimap' },
   { title: 'Мулан', year: 1998, rating: 8.1, date: '2022-07-15', nick: 'zhrun1' },
   { title: 'Мумия', year: 1999, rating: 7.8, chat: 8.5, date: '2024-07-27', nick: 'lisichka_4an' },
   { title: 'Назад в будущее', year: 1985, rating: 8.6, date: '2023-04-21', nick: 'PastGenKnight' },
