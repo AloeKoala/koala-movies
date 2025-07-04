@@ -18,7 +18,7 @@ export function useStatistics() {
 
     movies.value.forEach(movie => {
       if (!movie.nick) return
-      const nicks = movie.nick.split(',').map(n => n.trim()).filter(Boolean)
+      const nicks = movie.nick.split('+').map(n => n.trim()).filter(Boolean)
       nicks.forEach(nick => {
         nicknameCount[nick] = (nicknameCount[nick] || 0) + 1
       })
