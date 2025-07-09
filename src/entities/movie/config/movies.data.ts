@@ -149,6 +149,7 @@ export const movies: Movie[] = [
   { title: 'Люси', year: 2014, rating: 6.8, chat: 5.5, date: '2024-01-19', nick: 'zhrun1'   },
   { title: 'Мадам паутина', year: 2024, rating: 4.9, chat: 3.0, date: '2024-10-11', nick: 'daddypancake' },
   { title: 'Мажор', year: 2021, rating: 7.0, date: '2023-05-12', nick: 'МАЖОР_ИЗ_СПБ' },
+  { title: 'Майнкрафт', year: 2025, rating: 6.0, chat: 6.5, date: '2025-07-09', nick: 'zhrun1'   },
   { title: 'Малхолланд драйв', year: 2001, rating: 7.7, chat: 8.0, date: '2025-01-17', nick: 'magicisnothere' },
   { title: 'Мальчик и птица', year: 2023, rating: 7.8, chat: 7.0, date: '2024-07-12', nick: 'zhrun1+0706aestyles+lord_cthulhu_23' },
   { title: 'Мальчишник в Вегасе', year: 2009, rating: 7.9, chat: 8.0, date: '2024-07-05', nick: '0706aestyles' },
