@@ -310,6 +310,8 @@ export const movies: Movie[] = [
   { title: 'Хранители', year: 2009, rating: 7.7, chat: 9.0, date: '2024-04-05', nick: 'DrZlo' },
   { title: 'Час пик 2', year: 2001, rating: 7.4, chat: 8.5, date: '2024-06-09', nick: 'azalia_ff' },
   { title: 'Человек дождя', year: 1988, rating: 8.2, chat: 8.0, date: '2024-02-16', nick: 'lord_cthulhu_23' },
+  { title: 'Человек-паук', year: 2002, rating: 7.8, chat: 8.0, date: '2025-07-16', nick: 'Mtivil' },
+  { title: 'Человек-паук: Через вселенные', year: 2018, rating: 8.2, chat: 9.5, date: '2025-07-16', nick: 'lord_cthulhu_23' },
   { title: 'Чем мы заняты в тени', year: 2014, rating: 7.5, chat: 6.0, date: '2024-01-14', nick: 'AloeKoala' },
   { title: 'Чип и Дейл спешат на помощь', year: 2022, rating: 6.6, chat: 5.0, date: '2023-12-01', nick: 'lord_cthulhu_23' },
   { title: 'Что гложет Гилберта Грейпа', year: 1993, rating: 7.9, date: '2023-06-23', nick: 'lord_cthulhu_23' },
