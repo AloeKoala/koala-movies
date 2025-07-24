@@ -74,6 +74,7 @@ export const movies: Movie[] = [
   { title: 'Грань будущего', year: 2014, rating: 7.9, date: '2022-08-12', nick: 'DrZlo+PastGenKnight' },
   { title: 'Грязь', year: 2013, rating: 7.7, date: '2024-05-24', nick: 'lord_cthulhu_23' },
   { title: 'Девочка, покорившая время', year: 2006, rating: 8.0, chat: 7.5, date: '2025-05-30', nick: 'azalia_ff' },
+  { title: 'День курка', year: 2020, rating: 7.2, chat: 7.0, date: '2025-07-23', nick: 'zhrun1' },
   { title: 'День сурка', year: 1993, rating: 8.1, chat: 8.0, date: '2025-06-27', nick: '0706aestyles+Best_try' },
   { title: 'Джентльмены', year: 2019, rating: 8.6, date: '2022-06-30', nick: 'lord_cthulhu_23' },
   { title: 'Джуманджи', year: 1995, rating: 7.9, chat: 8.5, date: '2024-11-08', nick: 'Best_try' },
