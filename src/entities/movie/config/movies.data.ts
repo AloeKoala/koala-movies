@@ -117,7 +117,7 @@ export const movies: Movie[] = [
   { title: 'Идиократия', year: 2005, rating: 6.6, chat: 6.5, date: '2024-05-31', nick: 'zhrun1' },
   { title: 'Из Китая с любовью', year: 1994, rating: 7.1, chat: 7.5, date: '2025-08-29', nick: 'lisichka_4an+daddypancake' },
   { title: 'Изумительный Морис', year: 2022, rating: 7.3, date: '2023-06-09', nick: 'zhrun1' },
-  { title: 'Иллюзия обмана', year: 2013, rating: 7.8, chat: 7.5, date: '2025-08-29', nick: 'zhrun1' },
+  { title: 'Иллюзия обмана', year: 2013, rating: 7.8, chat: 7.5, date: '2025-08-29', nick: 'lord_cthulhu_23' },
   { title: 'Истребитель демонов: Поезд «Бесконечный»', year: 2020, rating: 8.0, date: '2022-09-02', nick: 'lord_cthulhu_23' },
   { title: 'Как Витька Чеснок вёз Лёху Штыря в дом инвалидов', year: 2017, rating: 7.2, date: '2023-10-27', nick: '1111' },
   { title: 'Когда Гарри встретил Салли', year: 1989, rating: 7.7, date: '2023-12-29', nick: 'daddypancake' },
