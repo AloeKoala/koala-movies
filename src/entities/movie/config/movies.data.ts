@@ -111,6 +111,7 @@ export const movies: Movie[] = [
   { title: 'Зомби по имени Шон', year: 2004, rating: 7.3, date: '2023-09-01', nick: 'lord_cthulhu_23' },
   { title: 'Зомбилэнд: Контрольный выстрел', year: 2019, rating: 6.7, date: '2023-10-06', nick: 'PastGenKnight' },
   { title: 'Женя, Женечка и "Катюша"', year: 1967, rating: 8.2, chat: 5.5, date: '2024-09-13', nick: 'coloradobug' },
+  { title: 'Жизнь Чака', year: 2024, rating: 7.6, chat: 8.0, date: '2025-08-31', nick: 'lord_cthulhu_23' },
   { title: 'Игра', year: 1997, rating: 8.3, date: '2022-11-25', nick: 'DrZlo' },
   { title: 'Игры разума', year: 2001, rating: 8.5, chat: 8.5, date: '2025-04-11', nick: 'lord_cthulhu_23' },
   { title: 'Идентификация', year: 2003, rating: 7.6, date: '2023-05-05', nick: 'PastGenKnight+0706aestyles' },
