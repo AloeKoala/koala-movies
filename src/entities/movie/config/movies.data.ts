@@ -338,6 +338,7 @@ export const movies: Movie[] = [
   { title: 'Экзамен', year: 2009, rating: 7.0, chat: 6.0, date: '2024-03-01', nick: '0706aestyles' },
   { title: 'Энканто', year: 2021, rating: 7.5, chat: 6.5, date: '2024-03-22', nick: 'zhrun1' },
   { title: 'Эта дурацкая любовь', year: 2011, rating: 7.6, chat: 8.0, date: '2025-05-02', nick: '0706aestyles+PastGenKnight' },
+  { title: 'Этот замечательный мир! Багровая легенда', year: 2019, rating: 7.7, chat: 6.5, date: '2025-09-07', nick: 'Inqisitr' },
   { title: 'Юра дворник', year: 2023, rating: 6.8, date: '2023-06-16', nick: 'PastGenKnight' },
   { title: 'Я иду искать', year: 2019, rating: 6.9, chat: 7.0, date: '2024-04-05', nick: 'lord_cthulhu_23' },
   { title: 'Я потеряла свое тело', year: 2019, rating: 7.5, chat: 6.5, date: '2024-05-03', nick: 'zhrun1' },
