@@ -81,6 +81,7 @@ export const movies: Movie[] = [
   { title: 'День сурка', year: 1993, rating: 8.1, chat: 8.0, date: '2025-06-27', nick: '0706aestyles+Best_try' },
   { title: 'Джентльмены', year: 2019, rating: 8.6, date: '2022-06-30', nick: 'lord_cthulhu_23' },
   { title: 'Джуманджи', year: 1995, rating: 7.9, chat: 8.5, date: '2024-11-08', nick: 'Best_try' },
+  { title: 'Ди: жажда крови', year: 2000, rating: 7.8, chat: 7.5, date: '2025-10-15', nick: 'magicisnothere' },
   { title: 'Дикие истории', year: 2014, rating: 7.7, chat: 7.5, date: '2025-09-12', nick: 'DrZlo' },
   { title: 'Дитя погоды', year: 2019, rating: 8.0, chat: 7.5, date: '2024-04-19', nick: 'Inqisitr' },
   { title: 'Добро пожаловать в Зомбилэнд', year: 2009, rating: 7.4, date: '2023-04-14', nick: 'DrZlo+zhrun1+PastGenKnight+0706aestyles' },
