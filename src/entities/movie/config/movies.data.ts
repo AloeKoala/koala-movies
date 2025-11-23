@@ -13,7 +13,7 @@ export const movies: Movie[] = [
   { title: 'Автостопом по галактике', year: 2005, rating: 7.1, date: '2023-01-27', nick: 'zhrun1' },
   { title: 'Агенты А.Н.К.Л.', year: 2015, rating: 7.6, chat: 7.5, date: '2024-12-06', nick: 'zhrun1' },
   { title: 'Адвокат дьявола', year: 1997, rating: 8.2, date: '2023-06-16', nick: '0706aestyles+zhrun1' },
-  { title: 'Акира', year: 1987, rating: 7.9, chat: 7.0, date: '2025-11-23', nick: 'vex1l+zhrun1' },
+  { title: 'Акира', year: 1987, rating: 7.9, chat: 7.0, date: '2025-11-21', nick: 'vex1l+zhrun1' },
   { title: 'Арахисовый сокол', year: 2019, rating: 7.6, date: '2023-07-21', nick: 'lord_cthulhu_23' },
   { title: 'Артур, ты король', year: 2024, rating: 8.3, chat: 7.0, date: '2025-01-31', nick: 'lord_cthulhu_23' },
   { title: 'Астерикс и Обеликс: Миссия Клеопатра', year: 2002, rating: 7.3, chat: 9.0, date: '2023-11-17', nick: 'lord_cthulhu_23' },
