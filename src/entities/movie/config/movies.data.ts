@@ -93,6 +93,7 @@ export const movies: Movie[] = [
   { title: 'Добытчица', year: 2017, rating: 7.8, chat: 6.5, date: '2025-09-12', nick: 'zhrun1' },
   { title: 'Довод', year: 2020, rating: 7.5, date: '2022-09-22', nick: 'DrZlo+0706aestyles' },
   { title: 'Догма', year: 1999, rating: 7.7, date: '2023-07-07', nick: 'zhrun1' },
+  { title: 'Дом, который построил Джек', year: 2018, rating: 7.0, chat: 4.0, date: '2025-11-30', nick: 'daddypancake' },
   { title: 'Дом у дороги', year: 2024, rating: 6.4, chat: 5.0, date: '2025-03-14', nick: 'lord_cthulhu_23' },
   { title: 'Дорога домой', year: 2021, rating: 6.9, chat: 7.0, date: '2024-03-22', nick: 'lord_cthulhu_23' },
   { title: 'Дорога на Эльдорадо', year: 2000, rating: 7.8, chat: 7.5, date: '2024-09-13', nick: 'lord_cthulhu_23' },
