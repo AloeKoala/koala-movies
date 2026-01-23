@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
 
 <template>
   <u-container class="p-4 flex-grow">
-    <statistics-chart ref="statisticsRef" class="mb-12" />
+    <statistics-chart ref="statisticsRef" class="mb-18" />
 
     <div class="flex items-center gap-2 mb-6 sticky top-2 z-1" ref="filterRef">
       <movies-filter

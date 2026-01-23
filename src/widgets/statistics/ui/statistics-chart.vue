@@ -1,76 +1,49 @@
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue'
-import { useStatistics } from '@/widgets/statistics/model/statistics.composable'
+import { useStatistics } from '../model/statistics.composable'
+import TopUsers from './top-users.vue'
+import TopMovies from './top-movies.vue'
+import TotalMovies from './total-movies.vue'
 
-const { totalMovies, top3MoviesByChatRating, top3Nicknames } = useStatistics()
+const USER_QTY = 10
+const MOVIE_QTY = 5
+
+const { totalMovies, topMovies, topUsers } = useStatistics({ users: USER_QTY, movies: MOVIE_QTY })
 
 const root = ref<HTMLElement | null>(null)
+
 defineExpose({ root })
 </script>
 
 <template>
   <div ref="root" class="flex flex-col items-center justify-center w-full">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-      <!-- Топ-3 спонсоров -->
-      <UCard class="flex flex-col items-center shadow-sm" :ui="{ body: 'self-stretch' }">
-        <div class="flex flex-col items-center gap-3 py-4 w-full">
-          <UIcon name="i-lucide-users" class="text-green-500 size-7 mb-2" />
-          <span
-            class="font-amatic text-3xl font-bold text-center max-w-min overflow-hidden text-ellipsis truncate whitespace-nowrap w-full"
-            >Топ-3 спонсоров</span
-          >
-          <ul class="space-y-5 w-full mt-2">
-            <li
-              v-for="user in top3Nicknames"
-              :key="user.nick"
-              class="flex items-center justify-between w-full px-2"
-            >
-              <span
-                class="truncate w-full max-w-min whitespace-nowrap overflow-hidden text-ellipsis"
-                >{{ user.nick }}</span
-              >
-              <UBadge color="primary" variant="outline" class="ml-2">{{ user.count }}</UBadge>
-            </li>
-          </ul>
-        </div>
-      </UCard>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 w-full">
+      <total-movies
+        :count="totalMovies"
+        title="Всего фильмов"
+        :ui="{
+          root: 'col-span-full ring-0',
+          body: 'flex items-center gap-8 sm:p-0 p-0',
+        }"
+      />
 
-      <!-- Топ-3 фильма -->
-      <UCard class="flex flex-col items-center shadow-sm" :ui="{ body: 'self-stretch' }">
-        <div class="flex flex-col items-center gap-3 py-4 w-full">
-          <UIcon name="i-lucide-star" class="text-yellow-400 size-7 mb-2" />
-          <span
-            class="font-amatic text-3xl font-bold text-center max-w-min overflow-hidden text-ellipsis truncate whitespace-nowrap w-full"
-            >Топ-3 фильма по версии чата</span
-          >
-          <ul class="space-y-5 w-full mt-2">
-            <li
-              v-for="movie in top3MoviesByChatRating"
-              :key="movie.title"
-              class="flex items-center justify-between w-full px-2"
-            >
-              <span
-                class="truncate w-full max-w-min whitespace-nowrap overflow-hidden text-ellipsis"
-                >{{ movie.title }}</span
-              >
-              <UBadge color="primary" variant="outline" class="ml-2">{{ movie.chat }}</UBadge>
-            </li>
-          </ul>
-        </div>
-      </UCard>
-      <!-- Всего фильмов -->
-      <UCard class="flex flex-col items-center shadow-sm" :ui="{ body: 'self-stretch h-full' }">
-        <div class="flex flex-col items-center gap-3 py-4 h-full">
-          <UIcon name="i-lucide-film" class="text-secondary size-7 mb-2" />
-          <span
-            class="font-amatic text-3xl font-bold text-center max-w-min overflow-hidden text-ellipsis truncate whitespace-nowrap w-full mb-4"
-            >Всего фильмов</span
-          >
-          <UBadge color="primary" variant="solid" class="text-2xl px-6 py-2 m-auto">{{
-            totalMovies
-          }}</UBadge>
-        </div>
-      </UCard>
+      <top-users
+        :list="topUsers"
+        :title="`Топ-${USER_QTY} спонсоров`"
+        :ui="{
+          root: 'grid grid-cols-subgrid col-span-full ring-0',
+          body: 'grid grid-cols-subgrid col-span-full sm:p-0 p-0',
+        }"
+      />
+
+      <top-movies
+        :list="topMovies"
+        :title="`Топ-${MOVIE_QTY} фильмов по версии чата`"
+        :ui="{
+          root: 'grid grid-cols-subgrid col-span-full ring-0',
+          body: 'grid grid-cols-subgrid col-span-full sm:p-0 p-0',
+        }"
+      />
     </div>
   </div>
 </template>
