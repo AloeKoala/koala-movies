@@ -18,15 +18,6 @@ defineExpose({ root })
 <template>
   <div ref="root" class="flex flex-col items-center justify-center w-full">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-10 w-full">
-      <total-movies
-        :count="totalMovies"
-        title="Всего фильмов"
-        :ui="{
-          root: 'col-span-full ring-0',
-          body: 'flex items-center gap-8 sm:p-0 p-0',
-        }"
-      />
-
       <top-users
         :list="topUsers"
         :title="`Топ-${USER_QTY} спонсоров`"
@@ -42,6 +33,15 @@ defineExpose({ root })
         :ui="{
           root: 'grid grid-cols-subgrid col-span-full ring-0',
           body: 'grid grid-cols-subgrid col-span-full sm:p-0 p-0',
+        }"
+      />
+
+      <total-movies
+        :count="totalMovies"
+        title="Всего фильмов"
+        :ui="{
+          root: 'col-span-full ring-0',
+          body: 'flex items-center gap-8 sm:p-0 p-0 justify-center',
         }"
       />
     </div>

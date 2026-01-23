@@ -6,7 +6,7 @@ defineProps<{ list: User[]; title: string }>()
 
 <template>
   <u-card>
-    <div class="flex gap-3 py-2 w-full col-span-full mb-4">
+    <div class="flex gap-3 py-2 w-full col-span-full mb-4 justify-center">
       <u-icon name="i-lucide-users" class="text-green-500 size-7 mb-2" />
       <span
         class="font-amatic text-3xl font-bold text-center max-w-min overflow-hidden text-ellipsis truncate whitespace-nowrap w-full"
