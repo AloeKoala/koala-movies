@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, watch, ref, defineExpose } from 'vue'
-import { useWindowVirtualizer } from '@tanstack/vue-virtual'
+import { useVirtualizer } from '@tanstack/vue-virtual'
 import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { type Movie, MovieCard } from '@/entities/movie'
 import empty from '@/shared/assets/empty.png'
@@ -14,17 +14,17 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const isMobile = breakpoints.smaller('sm')
 
 const rowHeight = computed(() => (isMobile.value ? 120 : 80))
-const virtualizer = useWindowVirtualizer({
+const root = ref<HTMLElement | null>(null)
+
+const virtualizer = useVirtualizer({
   count: props.movies.length,
   estimateSize: (index) => (isItemVisible(index) ? rowHeight.value : 0),
   overscan: 10,
+  getScrollElement: () => root.value,
 })
 
 const virtualItems = computed(() => virtualizer.value.getVirtualItems())
 const totalSize = computed(() => virtualizer.value.getTotalSize())
-
-const root = ref<HTMLElement | null>(null)
-defineExpose({ root })
 
 function isItemVisible(index: number) {
   const item = props.movies[index]
@@ -46,11 +46,15 @@ watch(isMobile, () => {
 </script>
 
 <template>
-  <div ref="root" class="mb-4 flex justify-between items-center">
+  <div class="mb-4 flex justify-between items-center">
     <h2 class="sr-only">Фильмы</h2>
   </div>
 
-  <div v-if="movies.length > 0" :style="{ height: totalSize + 'px', position: 'relative' }">
+  <div
+    ref="root"
+    v-if="movies.length > 0"
+    :style="{ height: totalSize + 'px', position: 'relative' }"
+  >
     <div
       v-for="item in virtualItems"
       :key="item.index"
