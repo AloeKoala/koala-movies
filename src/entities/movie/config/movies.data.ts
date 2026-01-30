@@ -303,7 +303,7 @@ export const movies: Movie[] = [
   { title: 'Скотт Пилигрим против всех', year: 2010, rating: 7.3, date: '2023-06-23', nick: 'Djavaharlal' },
   { title: 'Смерть единорога', year: 2025, rating: 6.1, chat: 5.0, date: '2025-10-24', nick: 'lord_cthulhu_23+zhrun1+lisichka_4an' },
   { title: 'Смокинг', year: 2002, rating: 6.9, date: '2023-06-30', nick: 'zhrun1' },
-  { title: 'Созданный в бездне: Рассвет путешествия', year: 2003, rating: 8.1, chat: 8.5, date: '2025-12-19', nick: 'zhrun1' },
+  { title: 'Созданный в бездне: Рассвет путешествия', year: 2019, rating: 8.1, chat: 8.5, date: '2025-12-19', nick: 'zhrun1' },
   { title: 'Солдаты неудачи', year: 2008, rating: 6.8, chat: 8.5, date: '2025-07-12', nick: 'lord_cthulhu_23' },
   { title: 'Солнце в последние дни сегуната', year: 1954, rating: 7.4, date: '2023-02-10', nick: 'Daorein' },
   { title: 'Соник в кино', year: 2020, rating: 6.7, chat: 7.0, date: '2025-02-21', nick: 'Inqisitr' },
