@@ -127,6 +127,7 @@ export const movies: Movie[] = [
   { title: 'Запрещенный прием', year: 2011, rating: 6.6, date: '2023-09-22', nick: 'Rukinar' },
   { title: 'Заражение', year: 2011, rating: 6.6, date: '2022-11-11', nick: '0706aestyles' },
   { title: 'Зверополис', year: 2016, rating: 8.3, date: '2022-07-08', nick: 'DrZlo+lord_cthulhu_23' },
+  { title: 'Зверополис 2', year: 2025, rating: 7.8, chat: 8.0, date: '2026-01-31', nick: 'zhrun1' },
   { title: 'Здравствуй, мир!', year: 2019, rating: 7.7, chat: 7.5, date: '2025-10-17', nick: 'lord_cthulhu_23' },
   { title: 'Зеленая книга', year: 2018, rating: 8.5, date: '2022-08-05', nick: 'PastGenKnight' },
   { title: 'Зловещие мертвецы 2', year: 1987, rating: 7.6, chat: 7.0, date: '2025-10-03', nick: 'lord_cthulhu_23' },
