@@ -12,7 +12,7 @@ export default defineConfig({
       ui: {
         colors: {
           primary: 'violet',
-          neutral: 'slate',
+          neutral: 'gray',
         },
       },
     }),
