@@ -45,7 +45,7 @@ import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
   display: block;
   width: 55px;
   height: 88px;
-  background-image: url('@/shared/assets/logo_left.png');
+  background-image: url('@/app/assets/images/logo_left.png');
   transform: scale(50%);
 }
 
@@ -57,7 +57,7 @@ import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics'
   display: block;
   width: 89px;
   height: 100px;
-  background-image: url('@/shared/assets/logo_right.png');
+  background-image: url('@/app/assets/images/logo_right.png');
   transform: scale(50%);
 }
 
