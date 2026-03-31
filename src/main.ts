@@ -1,4 +1,4 @@
-import '@/shared/assets/main.css'
+import '@/app/assets/main.css'
 
 import { createApp } from 'vue'
 import ui from '@nuxt/ui/vue-plugin'

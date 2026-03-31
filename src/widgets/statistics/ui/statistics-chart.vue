@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue'
 import { useStatistics } from '../model/statistics.composable'
+import { USER_QTY, MOVIE_QTY } from '../config/statistics-output.config'
 import TopUsers from './top-users.vue'
 import TopMovies from './top-movies.vue'
 import TotalMovies from './total-movies.vue'
-
-const USER_QTY = 10
-const MOVIE_QTY = 5
 
 const { totalMovies, topMovies, topUsers } = useStatistics({ users: USER_QTY, movies: MOVIE_QTY })
 

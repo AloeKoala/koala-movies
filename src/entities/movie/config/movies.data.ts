@@ -288,7 +288,7 @@ export const movies: Movie[] = [
   { title: 'Пятый элемент', year: 1997, rating: 8.2, date: '2023-07-21', nick: 'PastGenKnight' },
   { title: 'Разборки в стиле кунг-фу', year: 2004, rating: 7.6, date: '2023-01-27', nick: 'lord_cthulhu_23' },
   { title: 'Разрушение', year: 2015, rating: 7.2, chat: 6.5, date: '2024-05-31', nick: 'Sendai1337' },
-  { title: 'Рататуй', year: 2007, rating: 8.0, date: '2023-05-05', nick: 'zhrun1' }, 
+  { title: 'Рататуй', year: 2007, rating: 8.0, date: '2023-05-05', nick: 'zhrun1' },
   { title: 'Реальная любовь', year: 2003, rating: 8.0, chat: 8.0, date: '2025-12-24', nick: 'lord_cthulhu_23' },
   { title: 'Рейс навылет', year: 2024, rating: 6.9, chat: 6.5, date: '2026-01-02', nick: 'PastGenKnight' },
   { title: 'Рестлер', year: 2008, rating: 7.5, chat: 7.5, date: '2025-05-30', nick: '0706aestyles' },

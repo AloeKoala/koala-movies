@@ -10,7 +10,6 @@ const filterValue = ref<string>('')
 const filteredMovies = ref<Movie[]>(movies.value)
 
 const statisticsRef = ref<{ root: HTMLElement | null } | null>(null)
-const filterRef = ref<HTMLElement | null>(null)
 const isIntersecting = ref<boolean>(false)
 
 let observer: IntersectionObserver | null = null
@@ -42,8 +41,8 @@ onBeforeUnmount(() => {
     <div class="flex items-center gap-2 mb-6 sticky top-2 z-1" ref="filterRef">
       <movies-filter
         v-model="filterValue"
-        :movies="movies"
         v-model:filteredMovies="filteredMovies"
+        :movies="movies"
         :is-intersecting="isIntersecting"
       />
     </div>
