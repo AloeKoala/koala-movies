@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, watch, ref, defineExpose } from 'vue'
+import { computed, watch, ref } from 'vue'
 import { useVirtualizer } from '@tanstack/vue-virtual'
 import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { type Movie, MovieCard } from '@/entities/movie'
-import empty from '@/shared/assets/empty.png'
+import empty from '@/app/assets/images/empty.webp'
 
 const props = defineProps<{
   movies: Movie[]
@@ -70,7 +70,7 @@ watch(isMobile, () => {
   </div>
 
   <div v-else class="text-center text-gray-500 flex flex-col items-center justify-center">
-    <img :src="empty" alt="empty" class="w-[200px] mb-4 mx-auto" />
+    <img :src="empty" alt="empty" class="w-[250px] mb-4 mx-auto" />
     <span class="text-3xl font-bold font-amatic">Ничего не найдено</span>
   </div>
 </template>

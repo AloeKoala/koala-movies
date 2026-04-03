@@ -29,7 +29,7 @@ const chatColor = computed(() => {
     <div
       class="flex p-4 pb-2 justify-between gap-2 items-center w-full sm:max-w-full sm:justify-start sm:py-0"
     >
-      <h3 class="kd-h3 font-sans text-lg truncate">{{ title }}</h3>
+      <h3 class="kd-h3 font-sans text-xl truncate mb-0">{{ title }}</h3>
       <u-badge
         variant="soft"
         color="neutral"
@@ -52,7 +52,7 @@ const chatColor = computed(() => {
       />
       <u-badge
         v-if="chat"
-        icon="i-fluent:people-community-16-filled"
+        icon="ph:users-three"
         variant="soft"
         :color="chatColor"
         :label="chat"
@@ -62,7 +62,7 @@ const chatColor = computed(() => {
         <u-badge
           v-for="user of nick.split('+')"
           :key="user"
-          icon="i-material-symbols:person"
+          icon="i-ph:user-circle"
           variant="soft"
           color="neutral"
           :label="user"
@@ -71,7 +71,7 @@ const chatColor = computed(() => {
       </template>
       <u-badge
         v-if="date"
-        icon="i-lucide-calendar"
+        icon="ph:calendar-dots"
         variant="soft"
         color="neutral"
         :label="

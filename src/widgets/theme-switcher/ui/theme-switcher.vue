@@ -17,7 +17,7 @@ const isDark = computed({
 
 <template>
     <u-button
-        :icon="isDark ? 'i-lucide:sun' : 'i-lucide:moon'"
+        :icon="isDark ? 'i-ph:sun' : 'i-ph:moon-stars'"
         color="neutral"
         variant="ghost"
         class="text-muted"
