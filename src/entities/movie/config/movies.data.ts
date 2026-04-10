@@ -80,7 +80,7 @@ export const movies: Movie[] = [
   { title: 'Головоломка', year: 2015, rating: 8.1, chat: 7.5, date: '2024-06-30', nick: 'PastGenKnight' },
   { title: 'Головоломка 2', year: 2024, rating: 7.8, chat: 7.5, date: '2024-08-23', nick: 'zhrun1' },
   { title: 'Голоса', year: 2014, rating: 6.3, chat: 5.5, date: '2025-07-12', nick: 'lord_cthulhu_23' },
-  { title: 'Голубая логуна', year: 1980, rating: 7.1, chat: 7.0, date: '2026-03-01', nick: 'layn_elving' },
+  { title: 'Голубая лагуна', year: 1980, rating: 7.1, chat: 7.0, date: '2026-03-01', nick: 'layn_elving' },
   { title: 'Голый пистолет', year: 1988, rating: 7.4, chat: 8.5, date: '2024-09-06', nick: 'lisichka_4an' },
   { title: 'Голый пистолет 2 1/2: Запах страха', year: 1991, rating: 7.2, chat: 7.5, date: '2025-12-19', nick: 'lord_cthulhu_23' },
   { title: 'Гонка', year: 2013, rating: 8.1, chat: 8.5, date: '2025-03-28', nick: '0706aestyles' },
