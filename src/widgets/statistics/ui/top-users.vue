@@ -27,9 +27,9 @@ defineProps<{ list: User[]; title: string }>();
                 >
                     {{ user.nick }}
                 </span>
-                <u-badge color="primary" variant="subtle" class="ml-2">{{
-                    user.count
-                }}</u-badge>
+                <u-badge color="primary" variant="subtle" class="ml-2">
+                    {{ user.count }}
+                </u-badge>
             </li>
         </ul>
     </u-card>

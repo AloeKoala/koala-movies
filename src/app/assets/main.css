@@ -199,48 +199,6 @@
     );
 }
 
-@layer components {
-    /*
-     * TODO: remove this after the design is updated
-     */
-    .kd-spirits::before {
-        display: none;
-        content: '';
-        z-index: -1;
-        position: absolute;
-        inset: 0;
-        background-image: url('@/app/assets/images/ghosts.webp');
-        background-position: 50% 0%;
-        background-size: 250px;
-    }
-    /*
-     * TODO: remove this after the design is updated
-     */
-    .kd-obstacles::before {
-        display: none;
-        content: '';
-        z-index: -1;
-        position: absolute;
-        inset: 0;
-        background-image: url('@/app/assets/images/obstacles.webp');
-        background-position: 85% 5%;
-        background-size: 200px;
-    }
-    /*
-     * TODO: remove this after the design is updated
-     */
-    .kd-artefacts::before {
-        display: none;
-        content: '';
-        z-index: -1;
-        position: absolute;
-        inset: 0;
-        background-image: url('@/app/assets/images/artefacts.webp');
-        background-position: 55% 5%;
-        background-size: 250px;
-    }
-}
-
 h1,
 h2,
 h3,
