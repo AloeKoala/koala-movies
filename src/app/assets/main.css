@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
-@plugin '@tailwindcss/typography';
 
 @font-face {
     font-display: swap;
