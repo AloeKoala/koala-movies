@@ -1,47 +1,50 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+@plugin '@tailwindcss/typography';
 
 @font-face {
-  font-display: swap;
-  font-family: 'Amatic SC';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/amatic-sc-v28-cyrillic_latin_latin-ext-regular.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/amatic-sc-v28-cyrillic_latin_latin-ext-regular.woff2')
+        format('woff2');
 }
 @font-face {
-  font-display: swap;
-  font-family: 'Amatic SC';
-  font-style: normal;
-  font-weight: 700;
-  src: url('./fonts/amatic-sc-v28-cyrillic_latin_latin-ext-700.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/amatic-sc-v28-cyrillic_latin_latin-ext-700.woff2')
+        format('woff2');
 }
 @font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/open-sans-v44-latin-regular.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/open-sans-v44-latin-regular.woff2') format('woff2');
 }
 @font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url('./fonts/open-sans-v44-latin-italic.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('./fonts/open-sans-v44-latin-italic.woff2') format('woff2');
 }
 @font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('./fonts/open-sans-v44-latin-600.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/open-sans-v44-latin-600.woff2') format('woff2');
 }
 @font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('./fonts/open-sans-v44-latin-700.woff2') format('woff2');
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/open-sans-v44-latin-700.woff2') format('woff2');
 }
 
 :root:not(.dark) {
@@ -49,7 +52,7 @@
 }
 
 @theme static {
-    --color-white: oklch(0.995 0.005 78);
+    --color-white: #fff;
     --font-amatic: 'Amatic SC', sans-serif;
 
     /* Red - Warmer, more amber-toned */
@@ -184,6 +187,58 @@
 
 @utility kd-h4 {
     @apply mb-2 text-lg font-bold;
+}
+
+@utility kd-gradient {
+    display: none;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+@layer components {
+    /*
+     * TODO: remove this after the design is updated
+     */
+    .kd-spirits::before {
+        display: none;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        background-image: url('@/app/assets/images/ghosts.webp');
+        background-position: 50% 0%;
+        background-size: 250px;
+    }
+    /*
+     * TODO: remove this after the design is updated
+     */
+    .kd-obstacles::before {
+        display: none;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        background-image: url('@/app/assets/images/obstacles.webp');
+        background-position: 85% 5%;
+        background-size: 200px;
+    }
+    /*
+     * TODO: remove this after the design is updated
+     */
+    .kd-artefacts::before {
+        display: none;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        background-image: url('@/app/assets/images/artefacts.webp');
+        background-position: 55% 5%;
+        background-size: 250px;
+    }
 }
 
 h1,
