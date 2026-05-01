@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { computed, watch, ref } from 'vue';
 import type { Movie } from '@/entities/movie';
-import { sendMetricEvent, YM_ACTION } from '@/shared/lib/metrics';
-import { debounce } from '@/shared/lib/utils';
 
 const props = defineProps<{
     modelValue: string;
@@ -28,15 +26,8 @@ const sortOptions = [
 const sortBy = ref('title');
 const sortDir = ref<'asc' | 'desc'>('asc');
 
-const sendInputMetric = debounce((value: unknown) => {
-    if (typeof value === 'string') {
-        sendMetricEvent(YM_ACTION.INPUT_SEARCH, { searchMovie: value });
-    }
-}, 500);
-
 function updateValue(value: string) {
     emit('update:modelValue', value);
-    sendInputMetric(value);
 }
 
 function toggleSort(optionValue: string) {
@@ -46,10 +37,6 @@ function toggleSort(optionValue: string) {
         sortBy.value = optionValue;
         sortDir.value = 'asc';
     }
-    sendMetricEvent(YM_ACTION.CLICK_SORT, {
-        sort: optionValue,
-        direction: sortDir.value,
-    });
 }
 
 const filteredMovies = computed(() => {
