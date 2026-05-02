@@ -51,7 +51,7 @@
 }
 
 @theme static {
-    --color-white: #fff;
+    --color-white: oklch(0.995 0.005 78);
     --font-amatic: 'Amatic SC', sans-serif;
 
     /* Red - Warmer, more amber-toned */

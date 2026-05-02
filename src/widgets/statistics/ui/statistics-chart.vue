@@ -25,14 +25,14 @@ defineExpose({ root })
         }"
       />
 
-      <top-movies
+      <!-- <top-movies
         :list="topMovies"
         :title="`Топ-${MOVIE_QTY} фильмов по версии чата`"
         :ui="{
           root: 'grid grid-cols-subgrid col-span-full ring-0',
           body: 'grid grid-cols-subgrid col-span-full sm:p-0 p-0',
         }"
-      />
+      /> -->
 
       <total-movies
         :count="totalMovies"

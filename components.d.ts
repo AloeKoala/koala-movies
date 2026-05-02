@@ -13,14 +13,15 @@ declare module 'vue' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    UApp: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/App.vue')['default']
+    UApp: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/App.vue')['default']
     UAvatar: typeof import('./node_modules/.pnpm/@nuxt+ui@3.1.2_@babel+parser@7.27.2_embla-carousel@8.6.0_typescript@5.8.3_vite@6.3.5_@types+n_2i64dpi6gcjxm2izqozlmhnoke/node_modules/@nuxt/ui/dist/runtime/components/Avatar.vue')['default']
-    UBadge: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/Badge.vue')['default']
-    UButton: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/Button.vue')['default']
-    UButtonGroup: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/ButtonGroup.vue')['default']
-    UCard: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/Card.vue')['default']
-    UContainer: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/Container.vue')['default']
-    UIcon: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/vue/components/Icon.vue')['default']
-    UInput: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.28.5_axios@1.13.5_change-case@5.4.4_db0@0.3.1_better-sqlite3@1_rah2vee3yg4z4uq36ok272v5pi/node_modules/@nuxt/ui/dist/runtime/components/Input.vue')['default']
+    UBadge: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Badge.vue')['default']
+    UButton: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Button.vue')['default']
+    UButtonGroup: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/ButtonGroup.vue')['default']
+    UCard: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Card.vue')['default']
+    UContainer: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Container.vue')['default']
+    UIcon: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/vue/components/Icon.vue')['default']
+    UInput: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Input.vue')['default']
+    USkeleton: typeof import('./../../node_modules/.pnpm/@nuxt+ui@3.3.7_@babel+parser@7.29.2_axios@1.15.2_change-case@5.4.4_db0@0.3.1_better-sql_40fa184ee850e5052b3eabf824d29b1d/node_modules/@nuxt/ui/dist/runtime/components/Skeleton.vue')['default']
   }
 }
