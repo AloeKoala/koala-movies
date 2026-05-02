@@ -1,7 +1,6 @@
 import type { Movie } from '@/entities/movie'
 
 export const movies: Movie[] = [
-<<<<<<< HEAD
   { title: '1+1', year: 2011, rating: 8.9, date: '2023-02-03', nick: 'lord_cthulhu_23+zhrun1+PastGenKnight' },
   { title: '127 часов', year: 2010, rating: 7.7, date: '2023-08-25', nick: 'lord_cthulhu_23' },
   { title: '1408', year: 2009, rating: 7.7, chat: 7.0, date: '2023-11-24', nick: 'zhrun1' },
