@@ -57,8 +57,8 @@ fg.src = character
             </p>
             <img
                 src="@/app/assets/images/character.webp"
-                width="100%"
-                class="ml-auto mt-auto z-10 -mr-14"
+                width="60%"
+                class="ml-auto mt-auto z-10 mr-1 mb-1"
             />
         </template>
     </dashboard-tile>
