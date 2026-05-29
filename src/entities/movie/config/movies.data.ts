@@ -360,7 +360,7 @@ export const movies: Movie[] = [
   { title: 'Типа крутые легавые', year: 2007, rating: 7.7, chat: 7.5, date: '2025-05-16', nick: 'lord_cthulhu_23' },
   { title: 'Титан: После гибели Земли', year: 2000, rating: 7.3, chat: 6.0, date: '2024-12-06', nick: 'Inqisitr' },
   { title: 'Тоня против всех', year: 2017, rating: 7.3, chat: 7.0, date: '2025-06-20', nick: '0706aestyles' },
-  { title: 'Тот самый Мюнхгаузен', year: 1979, rating: 8.4, chat: 9.0, date: '2026-06-22', nick: 'Wartiger' },
+  { title: 'Тот самый Мюнхгаузен', year: 1979, rating: 8.4, chat: 9.0, date: '2026-05-22', nick: 'Wartiger' },
   { title: 'Трасса 60', year: 2002, rating: 8.1, date: '2023-01-07', nick: 'lord_cthulhu_23' },
   { title: 'Треугольник печали', year: 2022, rating: 6.5, chat: 7.0, date: '2024-12-01', nick: 'lisichka_4an' },
   { title: 'Три метра над уровнем неба', year: 2010, rating: 7.1, chat: 6.5, date: '2024-11-08', nick: 'бутербродикупавшиймасломвверх' },
